@@ -7,6 +7,8 @@
 </head>
 <body ng-app="F1FeederApp" ng-controller="driversController">
 
+<input type="text" ng-model="nameFilter" placeholder="Search..."/>
+
 <table>
 
   <thead>
@@ -16,13 +18,14 @@
   </thead>
 
   <tbody>
-  <tr ng-repeat="driver in driversList">
+  <tr ng-repeat="driver in driversList | filter: searchFilter">
         <td>{{$index + 1}}</td>
         <td>
-          <img src="img/flags/{{driver.Driver.nationality}}.png" />
+        <!-- This should be a link to a flags repository not their img repository -->
+          <img src="http://rboaventura.com/f1feeder/images/flags/{{driver.Driver.nationality}}.png" />
           {{driver.Driver.givenName}}&nbsp;{{driver.Driver.familyName}}
         </td>
-        <td>{{driver.Constructors[0].name}}</td>
+        <td><a href="{{driver.Constructors[0].url}}" target="_blank">{{driver.Constructors[0].name}}</a></td>
         <td>{{driver.points}}</td>
       </tr>
   </tbody>
