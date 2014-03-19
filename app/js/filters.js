@@ -2,7 +2,7 @@
 
 /* Filters */
 
-angular.module('F1FeederApp.filters', []).
+angular.module('DapiApp.filters', []).
   filter('interpolate', ['version', function(version) {
     return function(text) {
       return String(text).replace(/\%VERSION\%/mg, version);

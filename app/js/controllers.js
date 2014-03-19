@@ -2,7 +2,7 @@
 
 /* Controllers */
 
-// angular.module('F1FeederApp.controllers', []).
+// angular.module('DapiApp.controllers', []).
 //   controller('MyCtrl1', [function() {
 
 //   }])
@@ -10,7 +10,7 @@
 
 //   }]);
 
-angular.module('F1FeederApp.controllers', []).
+angular.module('DapiApp.controllers', []).
 
 controller('driversController', function($scope, ergastAPIservice) {
 //Dinamic API Source

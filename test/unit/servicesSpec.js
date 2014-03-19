@@ -3,7 +3,7 @@
 /* jasmine specs for services go here */
 
 describe('service', function() {
-  beforeEach(module('F1FeederApp.services'));
+  beforeEach(module('DapiApp.services'));
 
 
   describe('version', function() {

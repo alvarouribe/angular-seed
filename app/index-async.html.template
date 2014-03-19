@@ -32,7 +32,7 @@
       'js/directives.js'
     ], function() {
       // when all is done, execute bootstrap angular application
-      angular.bootstrap(document, ['F1FeederApp']);
+      angular.bootstrap(document, ['DapiApp']);
     });
   </script>
   <title>My AngularJS App</title>

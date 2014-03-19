@@ -3,7 +3,7 @@
 /* jasmine specs for filters go here */
 
 describe('filter', function() {
-  beforeEach(module('F1FeederApp.filters'));
+  beforeEach(module('DapiApp.filters'));
 
 
   describe('interpolate', function() {

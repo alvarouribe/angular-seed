@@ -3,7 +3,7 @@
 /* jasmine specs for controllers go here */
 
 describe('controllers', function(){
-  beforeEach(module('F1FeederApp.controllers'));
+  beforeEach(module('DapiApp.controllers'));
 
 
   it('should ....', inject(function() {

@@ -14542,8 +14542,8 @@ function $CacheFactoryProvider() {
  * Adding via the $templateCache service:
  *
  * ```js
- * var F1FeederApp = angular.module('F1FeederApp', []);
- * F1FeederApp.run(function($templateCache) {
+ * var DapiApp = angular.module('DapiApp', []);
+ * DapiApp.run(function($templateCache) {
  *   $templateCache.put('templateId.html', 'This is the content of the template');
  * });
  * ```
@@ -22390,15 +22390,15 @@ function adjustMatchers(matchers) {
  *
  * **Example**:  Consider the following case. <a name="example"></a>
  *
- * - your app is hosted at url `http://F1FeederApp.example.com/`
+ * - your app is hosted at url `http://DapiApp.example.com/`
  * - but some of your templates are hosted on other domains you control such as
  *   `http://srv01.assets.example.com/`,  `http://srv02.assets.example.com/`, etc.
- * - and you have an open redirect at `http://F1FeederApp.example.com/clickThru?...`.
+ * - and you have an open redirect at `http://DapiApp.example.com/clickThru?...`.
  *
  * Here is what a secure configuration for this scenario might look like:
  *
  * <pre class="prettyprint">
- *    angular.module('F1FeederApp', []).config(function($sceDelegateProvider) {
+ *    angular.module('DapiApp', []).config(function($sceDelegateProvider) {
  *      $sceDelegateProvider.resourceUrlWhitelist([
  *        // Allow same origin resource loads.
  *        'self',
@@ -22407,7 +22407,7 @@ function adjustMatchers(matchers) {
  *
  *      // The blacklist overrides the whitelist so the open redirect here is blocked.
  *      $sceDelegateProvider.resourceUrlBlacklist([
- *        'http://F1FeederApp.example.com/clickThru**']);
+ *        'http://DapiApp.example.com/clickThru**']);
  *      });
  * </pre>
  */
@@ -22862,7 +22862,7 @@ function $SceDelegateProvider() {
  * @example
 <example module="mySceApp" deps="angular-sanitize.js">
 <file name="index.html">
-  <div ng-controller="F1FeederAppController as myCtrl">
+  <div ng-controller="DapiAppController as myCtrl">
     <i ng-bind-html="myCtrl.explicitlyTrustedHtml" id="explicitlyTrustedHtml"></i><br><br>
     <b>User comments</b><br>
     By default, HTML that isn't explicitly trusted (e.g. Alice's comment) is sanitized when
@@ -22881,7 +22881,7 @@ function $SceDelegateProvider() {
 <file name="script.js">
   var mySceApp = angular.module('mySceApp', ['ngSanitize']);
 
-  mySceApp.controller("F1FeederAppController", function F1FeederAppController($http, $templateCache, $sce) {
+  mySceApp.controller("DapiAppController", function DapiAppController($http, $templateCache, $sce) {
     var self = this;
     $http.get("test_data.json", {cache: $templateCache}).success(function(userComments) {
       self.userComments = userComments;
@@ -22933,7 +22933,7 @@ function $SceDelegateProvider() {
  * That said, here's how you can completely disable SCE:
  *
  * <pre class="prettyprint">
- *   angular.module('F1FeederAppWithSceDisabledF1FeederApp', []).config(function($sceProvider) {
+ *   angular.module('DapiAppWithSceDisabledDapiApp', []).config(function($sceProvider) {
  *     // Completely disable SCE.  For demonstration purposes only!
  *     // Do not use in new projects.
  *     $sceProvider.enabled(false);

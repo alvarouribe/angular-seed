@@ -5,11 +5,11 @@
 
 // Demonstrate how to register services
 // In this case it is a simple value service.
-// angular.module('F1FeederApp.services', []).
+// angular.module('DapiApp.services', []).
 //   value('version', '0.1');
 
 
-angular.module('F1FeederApp.services', []).
+angular.module('DapiApp.services', []).
   factory('ergastAPIservice', function($http) {
 
     var ergastAPI = {};
