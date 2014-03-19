@@ -1,0 +1,30 @@
+<input type="text" ng-model="nameFilter" placeholder="Search..."/>
+
+<table>
+
+  <thead>
+    <tr>
+      <th colspan="5">Drivers Championship Standings</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <tr ng-repeat="driver in driversList | filter: searchFilter">
+        <td>{{$index + 1}}</td> <!-- start from 0  -->
+        <td>
+        <!-- This should be a link to a flags repository not their img repository -->
+          <img src="http://rboaventura.com/f1feeder/images/flags/{{driver.Driver.nationality}}.png" />
+        </td>
+        <td>  
+        	<a href="#/drivers/{{driver.Driver.driverId}}">
+	  			{{driver.Driver.givenName}}&nbsp;{{driver.Driver.familyName}}
+	  		</a>
+        </td>
+        <td>
+        	<a href="{{driver.Constructors[0].url}}" target="_blank">{{driver.Constructors[0].name}}</a>
+        </td>
+        <td>{{driver.points}}</td>
+      </tr>
+  </tbody>
+
+</table>
