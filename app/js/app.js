@@ -11,13 +11,13 @@ angular.module('DapiApp', [
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.
   	
-  	when('/drivers' , {
-  		templateUrl: 'partials/drivers.html', 
-  		controller: 'driversController'}).
+  	when('/cat' , {
+  		templateUrl: 'partials/categories.html', 
+  		controller: 'categoriesController'}).
   	
-  	when('/drivers/:id' , {
-  		templateUrl: 'partials/driver.html', 
-  		controller: 'driverController'}).
+  	// when('/drivers/:id' , {
+  	// 	templateUrl: 'partials/driver.html', 
+  	// 	controller: 'driverController'}).
 
-  	otherwise({redirectTo: '/drivers'});
+  	otherwise({redirectTo: '/categories'});
 }]);
