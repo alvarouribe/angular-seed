@@ -12,7 +12,7 @@
 
 angular.module('DapiApp.controllers', []).
 
-controller('driversController', function($scope, ergastAPIservice) {
+controller('categoryController', function($scope, spmAPIservice) {
 //Dinamic API Source
   $scope.nameFilter = null;
   $scope.driversList = [];
@@ -26,23 +26,23 @@ controller('driversController', function($scope, ergastAPIservice) {
 //Setup of the search field filter
 
 
-  ergastAPIservice.getDrivers().success(function (response) {
+  spmAPIservice.getDrivers().success(function (response) {
     $scope.driversList = response.MRData.StandingsTable.StandingsLists[0].DriverStandings;
   });
   
 }).
 
   /* Driver controller */
-  controller('driverController', function($scope, $routeParams, ergastAPIservice) {
+  controller('driverController', function($scope, $routeParams, spmAPIservice) {
     $scope.id = $routeParams.id;
     $scope.races = [];
     $scope.driver = null;
 
-    ergastAPIservice.getDriverDetails($scope.id).success(function (response) {
+    spmAPIservice.getDriverDetails($scope.id).success(function (response) {
         $scope.driver = response.MRData.StandingsTable.StandingsLists[0].DriverStandings[0]; 
     });
 
-    ergastAPIservice.getDriverRaces($scope.id).success(function (response) {
+    spmAPIservice.getDriverRaces($scope.id).success(function (response) {
         $scope.races = response.MRData.RaceTable.Races; 
     }); 
 

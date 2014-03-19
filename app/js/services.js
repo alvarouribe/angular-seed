@@ -10,30 +10,45 @@
 
 
 angular.module('DapiApp.services', []).
-  factory('ergastAPIservice', function($http) {
+  factory('spmAPIservice', function($http) {
 
-    var ergastAPI = {};
+    var spmAPI = {};
 
-    ergastAPI.getDrivers = function() {
+    spmAPI.getCategories = function() {
       return $http({
         method: 'JSONP', 
-        url: 'http://ergast.com/api/f1/2013/driverStandings.json?callback=JSON_CALLBACK'
+        url: 'http://web-services-nz.spmapplications.com/rest/1.0/lsobject/object/PROPERTY_CATEGORY/token/TRUSTED/user/AKLCSPM1/format/jsonp'
+        // url: 'http://ergast.com/api/f1/2013/driverStandings.json?callback=JSON_CALLBACK'
       });
     }
 
-    ergastAPI.getDriverDetails = function(id) {
-      return $http({
-        method: 'JSONP', 
-        url: 'http://ergast.com/api/f1/2013/drivers/'+ id +'/driverStandings.json?callback=JSON_CALLBACK'
-      });
-    }
-
-    ergastAPI.getDriverRaces = function(id) {
-      return $http({
-        method: 'JSONP', 
-        url: 'http://ergast.com/api/f1/2013/drivers/'+ id +'/results.json?callback=JSON_CALLBACK'
-      });
-    }
-
-    return ergastAPI;
+    return spmAPI;
   });
+
+  // factory('spmAPIservice', function($http) {
+
+  //   var spmAPI = {};
+
+  //   spmAPI.getDrivers = function() {
+  //     return $http({
+  //       method: 'JSONP', 
+  //       url: 'http://ergast.com/api/f1/2013/driverStandings.json?callback=JSON_CALLBACK'
+  //     });
+  //   }
+
+  //   spmAPI.getDriverDetails = function(id) {
+  //     return $http({
+  //       method: 'JSONP', 
+  //       url: 'http://ergast.com/api/f1/2013/drivers/'+ id +'/driverStandings.json?callback=JSON_CALLBACK'
+  //     });
+  //   }
+
+  //   spmAPI.getDriverRaces = function(id) {
+  //     return $http({
+  //       method: 'JSONP', 
+  //       url: 'http://ergast.com/api/f1/2013/drivers/'+ id +'/results.json?callback=JSON_CALLBACK'
+  //     });
+  //   }
+
+  //   return spmAPI;
+  // });
