@@ -11,13 +11,8 @@ angular.module('DapiApp', [
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.
   	
-  	when('/cat' , {
-  		templateUrl: 'partials/categories.html', 
-  		controller: 'categoriesController'}).
-  	
-  	// when('/drivers/:id' , {
-  	// 	templateUrl: 'partials/driver.html', 
-  	// 	controller: 'driverController'}).
+  	when('/cat' , { templateUrl: 'partials/categories.html', controller: 'categoryController'}).
+    when('/notfound' , { templateUrl: 'partials/notfound.html', controller: 'notfoundController'}).
 
-  	otherwise({redirectTo: '/categories'});
+  	otherwise({redirectTo: '/notfound'});
 }]);

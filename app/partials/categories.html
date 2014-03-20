@@ -1,3 +1,10 @@
-<tr ng-repeat="category in categoryList">
-	<td>{{$index + 1}}</td> <!-- start from 0  -->
+<h1>Category List</h1>
+
+<tr ng-repeat="ite in categoryList">
+
+	<td>{{ite.id}}</td>
+	<td>{{ite.code}}</td>
+	<td>{{ite.name}}</td>
+	<td>{{ite.level}}</td>
+	<td>{{ite.parent_id}}</td>
 </tr>

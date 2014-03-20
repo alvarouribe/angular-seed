@@ -12,14 +12,50 @@
 
 angular.module('DapiApp.controllers', []).
 
-controller('categoryController', function($scope, spmAPIservice) {
+controller('notfoundController', function($scope) {
+    $scope.message = "Sorry we didn't found this page!";
+}).
 
-    $scope.categoryList = [];
+controller('categoryController', function($scope) {
+//controller('categoryController', function($scope, spmAPIservice) {
 
-    spmAPIservice.getCategories().success(function (response) {
-        console.log(response);
-        $scope.categoryList = response.body[0];
-    });
+    $scope.categoryList = 
+    [{
+            id:"7445",
+            code:"AE",
+            name:"Albert-Eden",
+            level:"2",
+            parent_id:"3514"
+        },
+        {
+            id:"9328",
+            code:"ATP-TS-056",
+            name:"Kumeu \/Huapai Train Station",
+            level:"3",
+            parent_id:"3375"
+        },
+        {
+            id:"9306",
+            code:"CLOSED",
+            name:"Closed Toilets",
+            level:"3",
+            parent_id:"9305"
+        },
+        {
+            id:"9477",
+            code:"DEL",
+            name:"Ash Street",
+            level:"3",
+            parent_id:"9189"
+        },
+        {
+            id:"9478",
+            code:"DEL",
+            name:"Avondale Central Reserve",
+            level:"3",
+            parent_id:"9189"
+    }];
+
 });
 
 // controller('driversController', function($scope, spmAPIservice) {
